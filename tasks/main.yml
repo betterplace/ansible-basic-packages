@@ -1,0 +1,49 @@
+---
+- name: Enable epel-release
+  yum: name=epel-release state=installed
+
+- name: Install ansible requirements
+  yum: name={{item}} state=installed
+  with_items:
+    - libselinux-python
+    - python-passlib
+
+- name: Install betterplace tools
+  yum: name={{item}} state=installed
+  with_items:
+    - bind-utils
+    - gdb
+    - git
+    - htop
+    - iotop
+    - lsof
+    - ltrace
+    - man
+    - mc
+    - nc
+    - nmap
+    - screen
+    - strace
+    - telnet
+    - tmux
+    - tree
+    - vim-enhanced
+    - wget
+
+- name: Install system requirements
+  yum: name={{item}} state=installed
+  with_items:
+    - gcc
+    - gcc-c++
+    - glibc-static
+    - nfs-utils
+    - nfs-utils-lib
+    - patch
+    - psutils
+    - pv
+    - readline-devel
+    - rpm-build
+    - rpmdevtools
+    - yum-security
+    - yum-utils
+    - libselinux-python
