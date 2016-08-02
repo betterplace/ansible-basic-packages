@@ -30,6 +30,15 @@
     - vim-enhanced
     - wget
 
+- name: Install tmux confguration
+  copy:
+    src=tmux.conf
+    dest=/etc/tmux.conf
+    owner=root
+    group=root
+    mode=644
+  tags: tmux
+
 - name: Install system requirements
   yum: name={{item}} state=installed
   with_items:
