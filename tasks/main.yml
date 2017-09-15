@@ -29,6 +29,7 @@
     - tree
     - vim-enhanced
     - wget
+    - mail
 
 - name: Install tmux confguration
   copy:
